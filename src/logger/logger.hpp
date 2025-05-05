@@ -20,5 +20,6 @@ private:
     std::string getCurrentDateTime();
 
     std::string getLogLevel(LogLevel level);
+    std::string getLogColor(LogLevel level);
 
 };

@@ -30,7 +30,26 @@ std::string Logger::getLogLevel(LogLevel level){
     return "["+currentLogLevel+"] ";
 } 
 
+std::string Logger::getLogColor(LogLevel level){
+    std::string currentLogColor = "";
+    switch(level) {
+        case LogLevel::INFO:
+            currentLogColor = "\033[0;37m"; // White
+            break;
+        case LogLevel::WARNING:
+            currentLogColor = "\033[0;33m"; // Yellow
+            break;
+        case LogLevel::ERROR:
+            currentLogColor = "\033[0;31m"; // Red
+            break;
+        case LogLevel::DEBUG:
+            currentLogColor = "\033[0;34m"; // Blue
+            break;
+    } 
+    return currentLogColor;
+}
+
 void Logger::logEvent(LogLevel level, std::string text){
     std::string dateTime = getCurrentDateTime();
-    std::cout << getLogLevel(level) << dateTime << text << std::endl;
+    std::cout << getLogColor(level) << getLogLevel(level) << dateTime << text << "\033[0;37m" << std::endl;
 }
