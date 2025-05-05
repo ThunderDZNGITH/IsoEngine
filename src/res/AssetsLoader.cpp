@@ -7,3 +7,7 @@ void AssetsLoader::initTextures(){
     }
     logger.logEvent(LogLevel::INFO, "Textures initialization completed.");
 } 
+
+void AssetsLoader::loadAssets(){
+    loadAsset(grass);
+} 

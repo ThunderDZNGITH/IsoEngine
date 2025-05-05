@@ -4,8 +4,12 @@
 Logger logger;
 AssetsLoader aloader;
 
-int main(){
+void preInitEvent(){
     logger.logEvent(LogLevel::INFO, "Starting game initialization.");
-
+    logger.logEvent(LogLevel::INFO, "Starting textures initialization.");
     aloader.initTextures();
+    
+} 
+
+int main(){
 } 
